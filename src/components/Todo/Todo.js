@@ -5,13 +5,20 @@ import "./Todo.css";
 export class Todo extends Component {
   constructor(props) {
     super(props);
-    this.message = "Hello from the Todo";
+    this.todoContent = props.todoContent;
+    this.todoId = props.todoId;
   }
   render(props) {
-    return <h1>{this.message}</h1>;
+    return (
+      <div className="todo fade-in">
+        <p className="todoContent">{this.todoContent}</p>
+      </div>
+    );
   }
 }
 
-Todo.PropTypes = {};
+Todo.propTypes = {
+  todoContent: PropTypes.string
+};
 
 export default Todo;
