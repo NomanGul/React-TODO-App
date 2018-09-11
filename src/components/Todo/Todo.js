@@ -8,9 +8,18 @@ export class Todo extends Component {
     this.todoContent = props.todoContent;
     this.todoId = props.todoId;
   }
+
+  handleRemoveTodo = id => this.props.removeTodo(id);
+  
   render(props) {
     return (
       <div className="todo fade-in">
+        <span
+          className="closebtn"
+          onClick={() => this.handleRemoveTodo(this.todoId)}
+        >
+          &times;
+        </span>
         <p className="todoContent">{this.todoContent}</p>
       </div>
     );
