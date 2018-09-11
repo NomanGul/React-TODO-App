@@ -61,6 +61,7 @@ class App extends Component {
                 todoContent={todo.todoContent}
                 todoId={todo.id}
                 key={todo.id}
+                removeTodo={this.removeTodo}
               />
             );
           })}
