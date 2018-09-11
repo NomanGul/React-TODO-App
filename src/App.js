@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import Todo from "./components/Todo/Todo";
+import TodoForm from "./components/TodoForm/TodoForm";
 
 class App extends Component {
   constructor(props) {
@@ -12,6 +13,15 @@ class App extends Component {
       ]
     };
   }
+
+  addTodo = (todo) => {
+    const prevTodos = this.state.todos;
+    prevTodos.push({ id: prevTodos.length + 1, todoContent: todo });
+    this.setState({
+      notes: prevTodos
+    })
+  }
+
   render() {
     const { todos } = this.state;
     return (
@@ -30,7 +40,9 @@ class App extends Component {
             );
           })}
         </div>
-        <div className="todosFooter">I'm a Footer...</div>
+        <div className="todosFooter">
+          <TodoForm addTodo={this.addTodo}/>
+        </div>
       </div>
     );
   }
