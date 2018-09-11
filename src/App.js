@@ -16,7 +16,7 @@ class App extends Component {
     const { todos } = this.state;
     return (
       <div className="todosWrapper">
-        <div className="todosHeading">
+        <div className="todosHeader">
           <h1 className="heading">React & Firebase Todo App</h1>
         </div>
         <div className="todosBody">
